@@ -1,8 +1,8 @@
-#Test Automation Boilerplate
+# Test Automation Boilerplate
 
 This project delivers the basic structure needed to start your UI test automation.
 
-##Languages and Frameworks
+## Languages and Frameworks
 * **Java** as the programming language
 * **Selenium WebDriver** as the UI test automation tool
 * **TestNG** as the Unit Test framework
