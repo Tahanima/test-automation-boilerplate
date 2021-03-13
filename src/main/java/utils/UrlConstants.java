@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 public class Globals {
     public static final String CONTEXT_URL = "https://www.saucedemo.com/";
