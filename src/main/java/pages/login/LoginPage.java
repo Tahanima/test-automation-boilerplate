@@ -1,11 +1,15 @@
-package selenium.pages.login;
+package pages.login;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import selenium.pages.BasePage;
+import pages.BasePage;
 
-import static util.Globals.CONTEXT_URL;
+import static utils.UrlConstants.BASE_URL;
 
+/**
+ * @author tahanima
+ * @since 03/13/2021
+ */
 public class LoginPage extends BasePage {
     @FindBy(id = "user-name")
     private WebElement userName;
@@ -17,7 +21,7 @@ public class LoginPage extends BasePage {
     private WebElement login;
 
     public LoginPage open() {
-        driver.get(CONTEXT_URL);
+        driver.get(BASE_URL);
         return this;
     }
 

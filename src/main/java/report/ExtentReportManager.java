@@ -9,6 +9,10 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author tahanima
+ * @since 03/13/2021
+ */
 public class ExtentReportManager {
     private static ExtentReports report;
 

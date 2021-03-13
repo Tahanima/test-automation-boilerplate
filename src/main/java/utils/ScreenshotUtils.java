@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import org.openqa.selenium.WebDriver;
 import ru.yandex.qatools.ashot.AShot;
@@ -11,6 +11,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author tahanima
+ * @since 03/13/2021
+ */
 public class ScreenshotUtils {
     private static String imageFormat = "jpg";
 

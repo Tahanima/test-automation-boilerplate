@@ -3,19 +3,26 @@ package automation;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import driver.DriverManager;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import pages.BasePage;
 import report.ExtentReportManager;
-import selenium.DriverManager;
-import selenium.pages.BasePageFactory;
-import selenium.pages.login.LoginPage;
+import pages.BasePageFactory;
+import pages.login.LoginPage;
 
 import java.lang.reflect.Method;
 
+/**
+ * @author tahanima
+ * @since 03/13/2021
+ */
 public abstract class BaseTest {
     protected ExtentReports report;
     protected ExtentTest test;
@@ -23,6 +30,10 @@ public abstract class BaseTest {
     protected WebDriver driver = DriverManager.getDriver();
 
     public abstract void init();
+
+    protected <T extends BasePage> T createInstance(Class<T> page) {
+        return BasePageFactory.createInstance(driver, page);
+    }
 
     public void login(String username, String password) {
         loginPage.open()
@@ -33,10 +44,11 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void setup() {
+        Logger.getRootLogger().setLevel(Level.OFF);
         init();
 
         report = ExtentReportManager.createReport();
-        loginPage = BasePageFactory.createInstance(driver, LoginPage.class);
+        loginPage = createInstance(LoginPage.class);
     }
 
     @BeforeMethod
