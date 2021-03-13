@@ -12,14 +12,16 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
-    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
-    compile group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.3'
-    compile group: 'com.aventstack', name: 'extentreports', version: '4.1.6'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
-    testCompile group: 'com.github.javafaker', name: 'javafaker', version: '0.12'
-    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.15.0'
-    compile group: 'com.univocity', name: 'univocity-parsers', version: '2.8.3'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.3'
+    implementation group: 'com.aventstack', name: 'extentreports', version: '4.1.6'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.3.1'
+    implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
+
+    testImplementation group: 'org.testng', name: 'testng', version: '6.14.3'
+    testImplementation group: 'com.github.javafaker', name: 'javafaker', version: '0.12'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.15.0'
 }
 
 test {
