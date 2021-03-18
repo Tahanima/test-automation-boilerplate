@@ -14,14 +14,12 @@ import java.util.Date;
  * @since 03/13/2021
  */
 public class ExtentReportManager {
-    private static ExtentReports report;
-
     private ExtentReportManager() {}
 
     public static ExtentReports createReport() {
         String currentDateStr = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
         String name = "Test Automation Report " + currentDateStr;
-        String fileName = "test-report/" + name + ".html".replace("/", File.separator);
+        String fileName = "build/reports/" + name + ".html".replace("/", File.separator);
 
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(fileName);
         ExtentSparkReporterConfiguration config = sparkReporter.config();
@@ -31,7 +29,7 @@ public class ExtentReportManager {
         config.setEncoding("utf-8");
         config.setReportName(name);
 
-        report = new ExtentReports();
+        ExtentReports report = new ExtentReports();
         report.attachReporter(sparkReporter);
 
         return report;
