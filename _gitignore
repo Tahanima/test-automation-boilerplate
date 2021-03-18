@@ -1,12 +1,14 @@
 .*
 !.gitignore
 !.gitattributes
+*.iml
 *.ipr
 *.iws
-*.iml
+*.idea
 atlassian-ide-plugin.xml
 target
 build
 out
 test-out
 test.csv
+.gradle/
