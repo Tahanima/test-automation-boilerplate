@@ -26,6 +26,9 @@ public class DriverManager {
 
         ChromeOptions option = new ChromeOptions();
         option.addArguments("--ignore-certificate-errors");
+        option.addArguments("--no-sandbox");
+        option.addArguments("--disable-dev-shm-usage");
+        option.addArguments("--headless");
 
         driver = new ChromeDriver(option);
         driver.manage().timeouts().implicitlyWait(PAGE_TIME_OUT, TimeUnit.SECONDS);
